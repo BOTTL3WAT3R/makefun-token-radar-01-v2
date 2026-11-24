@@ -19,8 +19,8 @@ signal, momentum, and an exit rule.
 
 ## Data
 
-- Source: the official kit's sealed snapshot (`input/snapshot.json` of the kit;
-  a copy lives in `data/` for local runs). DefiLlama's public protocols list,
+- Source: the official kit's sealed snapshot (`input/snapshot.json` of the kit,
+  mounted at `/input` when the grader runs the program). DefiLlama's public protocols list,
   fetched 2026-11-14T01:18:33Z, `as_of` 2026-11-14: **758 protocols**, each with
   exactly ten fields (slug, name, category, chains, TVL, 7-day TVL change,
   market cap, listed-at date, CoinGecko id, symbol). The snapshot carries **no

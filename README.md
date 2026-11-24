@@ -56,9 +56,9 @@ mkdir -p out
 MAKEFUN_OUTPUT_DIR=out node main.ts --input ../input/snapshot.json
 ```
 
-`--input` takes the snapshot file or its directory; in this repository,
-`data/snapshot.json` is a byte copy of the kit's sealed input, so
-`node main.ts --input data` reproduces the run. The program writes to the
+`--input` takes the snapshot file or its directory; pointing it at the kit's
+own `input/` directory reproduces the run locally, and in the grader the
+sealed snapshot is mounted at `/input` by default. The program writes to the
 output directory:
 
 | File | What it is |
@@ -83,7 +83,6 @@ gate's limits (`boardIssue` in `lib/model.ts`). Two runs write the same bytes.
 - `dashboard/` — `index.html`, `app.css`, `app.js`: a static page, no network,
   ~24 KB of source so the dossier shows every file whole.
 - `vendor/makefun-board.ts` — make.fun's dossier library, vendored unchanged.
-- `data/snapshot.json` — the sealed snapshot this entry reads.
 - `screenshots/` — the three dossier images, rendered from the built page.
 
 ## The honest comparison

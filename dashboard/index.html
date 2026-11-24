@@ -3,23 +3,24 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Token Launch Radar — every pre-token protocol, ranked by implied value</title>
+<title>Token Launch Radar — pre-token protocols ranked by implied value</title>
 <link rel="stylesheet" href="app.css">
 </head>
 <body>
+
 <header class="top">
   <div class="wrap">
     <div class="title-row">
-      <h1>Token Launch Radar</h1>
       <span class="version" id="version"></span>
+      <h1>Token Launch Radar</h1>
     </div>
     <p class="sub" id="subline"></p>
-    <section class="model-strip" id="model-strip"></section>
+    <section class="model-strip" id="model-strip" aria-label="Model summary"></section>
   </div>
 </header>
 
 <main class="wrap" id="board-view">
-  <section class="controls" id="controls">
+  <section class="controls" id="controls" aria-label="Board controls">
     <input type="search" id="q" placeholder="Search name, slug or chain…" aria-label="Search">
     <select id="f-cat" aria-label="Category"></select>
     <select id="f-chain" aria-label="Chain"></select>
@@ -43,6 +44,7 @@
 
   <div class="table-box">
     <table id="board">
+      <caption class="hint" style="text-align:left;padding:10px 12px 0">Every pre-token protocol in the snapshot, ranked by implied value. Click a row for its detail view and farm plan; click a heading to sort.</caption>
       <thead>
         <tr>
           <th data-sort="rank" class="num">#</th>
@@ -61,19 +63,18 @@
       <tbody id="rows"></tbody>
     </table>
   </div>
-  <p class="hint">Click a row for the protocol's detail view and its full farm plan. Click a column heading to sort.
-  Density is the labelled pool assumption (5% of implied value) per dollar the plan costs — the priority order, not the rank.</p>
+  <p class="hint">Density is the labelled pool assumption (5% of implied value) divided by the plan's total cost — the priority order across the board, not the rank. Rank is implied value alone.</p>
+
+  <section class="method">
+    <h2>How to read this board</h2>
+    <div id="method"></div>
+  </section>
 
   <section class="live-box">
     <h2>Already trading — set aside, never ranked</h2>
     <p class="hint">These protocols' tokens exist, so the market has already priced them. They are the
     comparables the curve is fitted on (at the $5M scale floor), shown here at the market's own values.</p>
     <div id="live"></div>
-  </section>
-
-  <section class="method">
-    <h2>How to read this board</h2>
-    <div id="method"></div>
   </section>
 </main>
 
